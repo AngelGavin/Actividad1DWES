@@ -5,9 +5,9 @@
     <title>Registro</title>
 </head>
 <body>
-<form th:action="/usuarioRegistrado" method="post">
-    Alias: <input type="text" name ="alias">
-    Contraseña: <input type="password" name ="pwd">
+<form th:action="@{/usuarioRegistrado}" method="post">
+    <input type="text" name ="alias">
+    <input type="password" name ="pwd">
     <button type="submit">Registrarse</button>
 </form>
 </body>

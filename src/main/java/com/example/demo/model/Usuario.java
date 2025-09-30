@@ -5,9 +5,9 @@ public class Usuario {
     private String alias;
     private String pwd;
 
-    public Usuario(String alias, String contrasenia) {
+    public Usuario(String alias, String pwd) {
         this.alias = alias;
-        this.pwd = contrasenia;
+        this.pwd = pwd;
     }
 
     public Usuario(){}

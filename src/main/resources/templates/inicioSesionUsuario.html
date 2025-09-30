@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Inicio de sesión</title>
 </head>
 <body>
-
+<form th:action="@{/usuarioSesionIniciada}" method="post">
+    <input type="text" name ="alias">
+    <input type="password" name ="pwd">
+    <button type="submit">Iniciar sesión</button>
+</form>
 </body>
 </html>
