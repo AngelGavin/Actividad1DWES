@@ -3,28 +3,29 @@ package com.example.demo.model;
 public class Usuario {
 
     private String alias;
-    private String contrasenia;
+    private String pwd;
 
     public Usuario(String alias, String contrasenia) {
         this.alias = alias;
-        this.contrasenia = contrasenia;
+        this.pwd = contrasenia;
     }
 
     public Usuario(){}
+
 
     public String getAlias() {
         return alias;
     }
 
-    public String getContrasenia() {
-        return contrasenia;
+    public String getPwd() {
+        return pwd;
     }
 
     public void setAlias(String alias) {
         this.alias = alias;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 }
