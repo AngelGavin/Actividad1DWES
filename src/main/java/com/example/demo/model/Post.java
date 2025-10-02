@@ -10,14 +10,14 @@ public class Post {
     private LocalDateTime fecha;
     private Usuario usuario;
 
-    private Post repost; //Si es null, es el post original, sino, es un repost, y este atributo contiene el original.
+    private Post repostDe; //Si es null, es el post original, sino, es un repostDe, y este atributo contiene el original.
 
-    public Post(String id, String mensaje, Usuario usuario, LocalDateTime fecha, Post repost) {
+    public Post(String id, String mensaje, Usuario usuario, LocalDateTime fecha, Post repostDe) {
         this.id = id;
         this.mensaje = mensaje;
         this.usuario = usuario;
         this.fecha = fecha;
-        this.repost = repost;
+        this.repostDe = repostDe;
     }
 
     public Post() {}
@@ -38,16 +38,16 @@ public class Post {
         return usuario;
     }
 
-    public Post getRepost() {
-        return repost;
+    public Post getRepostDe() {
+        return repostDe;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setRepost(Post repost) {
-        this.repost = repost;
+    public void setRepostDe(Post repostDe) {
+        this.repostDe = repostDe;
     }
 
     public void setUsuario(Usuario usuario) {

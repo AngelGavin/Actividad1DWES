@@ -9,13 +9,22 @@ import java.util.List;
 @Service
 public class UsuarioService {
 
-    private static List<Usuario> usuarios = new ArrayList<>();
+    private List<Usuario> usuarios = new ArrayList<>();
 
-    public static List<Usuario> getTodosUsuarios(){
+    public List<Usuario> getTodosUsuarios(){
         return usuarios;
     }
 
-    public static void agregarUsuario(Usuario usuario){
+    public void agregarUsuario(Usuario usuario){
         usuarios.add(usuario);
+    }
+
+    public Usuario buscarPorAlias(String alias){
+        for(Usuario u: usuarios){
+            if(u.getAlias().equals(alias)){
+                return u;
+            }
+        }
+        return null;
     }
 }
