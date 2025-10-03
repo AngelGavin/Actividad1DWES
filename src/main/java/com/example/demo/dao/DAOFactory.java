@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import com.example.demo.dao.posts.DAOPosts;
 import com.example.demo.dao.posts.DAOPostsRAM;
 import com.example.demo.dao.usuarios.DAOUsuarios;
 import com.example.demo.dao.usuarios.DAOUsuariosRAM;
@@ -8,8 +9,8 @@ public class DAOFactory {
 
     private static DAOFactory daoFactory;
 
-    private DAOUsuarios DAOUsuarios;
-    private DAOPosts DAOPosts;
+    private DAOUsuarios daoUsuarios;
+    private DAOPosts daoPosts;
 
     private DAOFactory(){}
 

@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.DAOFactory;
 import com.example.demo.model.Post;
 import com.example.demo.model.Usuario;
 import com.example.demo.service.PostService;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,18 +22,16 @@ public class PostController {
     }
 
     @PostMapping("/postCreado")
-    public String crearPost(@RequestParam String mensaje, HttpSession session){
-
-        Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioLogueado");
-
-        if(usuarioLogueado == null){
-            return "redirect:/inicioSesionUsuario";
-        }
+    public String crearPost(@RequestParam String mensaje, @RequestParam String alias){
 
         Post post = new Post();
+
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        Usuario usuario = daoFactory.getDaousuarios().buscarPorAlias(alias);
+
         post.setMensaje(mensaje);
         post.setFecha(java.time.LocalDateTime.now());
-        post.setUsuario(usuarioLogueado);
+        post.setUsuario(usuario);
         post.setRepostDe(null);
 
         postService.agregarPost(post);

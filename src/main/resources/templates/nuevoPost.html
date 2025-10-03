@@ -7,7 +7,8 @@
 <body>
 <h1>¿Que quieres publicar?</h1>
 <form th:action="@{postCreado}" method="post">
-    <textarea name="mensaje"></textarea>
+    <textarea name="mensaje" placeholder="Escribe aquí tu mensaje"></textarea>
+    <input name="alias" placeholder="Escribe aquí tu alias">
     <button type="submit">Publicar</button>
 </form>
 </body>
